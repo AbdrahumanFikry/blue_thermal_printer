@@ -22,8 +22,9 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-
-    namespace 'id.kakzaki.blue_thermal_printer'
+    if (project.android.hasProperty("namespace")) {
+        namespace 'id.kakzaki.blue_thermal_printer'
+    }
     
     compileSdkVersion 31
     compileOptions {
